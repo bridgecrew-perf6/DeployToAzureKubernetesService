@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: scrapp1nginxaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scrapp1nginxaks
+  template:
+    metadata:
+      labels:
+        app: scrapp1nginxaks 
+    spec:
+      containers:
+        - name: scrapp1nginxaks 
+          image: acrscrdemo2.azurecr.io/scrapp1nginxaks
+          ports:
+          - containerPort: 80
